@@ -1,0 +1,88 @@
+/* 주 메뉴바 — 사이드 메뉴(SideMenu)와 같은 흰 플로팅 카드 + 둥근 항목 */
+.main-nav {
+  width: 1200px;
+  margin: 24px 0 0 128px;
+}
+
+.main-nav__list {
+  display: grid;
+  grid-template-columns: repeat(var(--nav-count, 4), minmax(0, 1fr));
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  background: var(--page);
+  box-shadow: 0 10px 30px rgba(9, 80, 160, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.main-nav__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  color: var(--gray-500);
+  font-size: var(--text-size-16);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.main-nav__icon {
+  flex-shrink: 0;
+}
+
+.main-nav__item:hover {
+  background: var(--main2-card);
+  color: var(--primary-hover);
+}
+
+.main-nav__item.is-active {
+  background: var(--primary);
+  color: var(--text-on-primary);
+}
+
+.main-nav__item:focus-visible {
+  outline: 2px solid var(--border);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1439px) {
+  .main-nav {
+    width: auto;
+    margin: 16px 24px 0;
+  }
+
+  .main-nav__list {
+    border-radius: var(--radius-lg);
+    padding: 6px;
+  }
+
+  .main-nav__item {
+    height: 44px;
+    border-radius: var(--radius-md);
+    font-size: var(--text-size-15);
+  }
+}
+
+@media (max-width: 767px) {
+  .main-nav {
+    margin: 12px 16px 0;
+  }
+
+  /* 4칸이 좁아지므로 사이드 메뉴처럼 아이콘 위·글자 아래 */
+  .main-nav__item {
+    flex-direction: column;
+    gap: 3px;
+    height: 52px;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+  }
+
+  .main-nav__icon {
+    width: 18px;
+    height: 18px;
+  }
+}

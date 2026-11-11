@@ -1,0 +1,50 @@
+.tab-menu {
+  display: grid;
+  grid-template-columns: var(--tab-columns, none);
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  height: 64px;
+  background: var(--main2-card);
+}
+
+.tab-menu__tab {
+  padding: 12px 24px;
+  background: var(--main2-card);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.tab-menu__tab:hover {
+  color: var(--primary);
+}
+
+.tab-menu__tab.is-active {
+  background: var(--primary);
+  color: var(--text-on-primary);
+}
+
+/* 좁은 화면: 탭을 가로 스크롤로 */
+@media (max-width: 1439px) {
+  .tab-menu {
+    display: flex;
+    height: auto;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .tab-menu__tab {
+    flex: 1 0 auto;
+    padding: 6px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tab-menu__tab {
+    padding: 4px 16px;
+    font-size: var(--text-size-13);
+  }
+}

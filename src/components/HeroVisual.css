@@ -1,0 +1,150 @@
+/* 페이지 배너 그림 — 크기는 컨테이너 폭(cqi) 기준이라 데스크탑·모바일에서 같은 비율로 보입니다 */
+.hero-visual {
+  --hv-from: #3a86e0;
+  --hv-to: var(--color-blue-900);
+  container-type: inline-size;
+  position: relative;
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  align-items: center;
+  width: 100%;
+  aspect-ratio: 602 / 260.606;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--hv-from) 0%, var(--hv-to) 100%);
+  overflow: hidden;
+}
+
+.hero-visual--teal {
+  --hv-from: #2aa6b8;
+  --hv-to: #13608a;
+}
+
+.hero-visual--indigo {
+  --hv-from: #5b6ee8;
+  --hv-to: #2b2f8f;
+}
+
+.hero-visual--sky {
+  --hv-from: #4aa3f0;
+  --hv-to: #1f5fb8;
+}
+
+/* 장식 원 */
+.hero-visual__ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-visual__ring--a {
+  top: -30cqi;
+  right: -14cqi;
+  width: 62cqi;
+  height: 62cqi;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-visual__ring--b {
+  bottom: -22cqi;
+  left: -10cqi;
+  width: 44cqi;
+  height: 44cqi;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+}
+
+/* 대표 아이콘 */
+.hero-visual__main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-visual__halo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25cqi;
+  height: 25cqi;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.hero-visual__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18cqi;
+  height: 18cqi;
+  border-radius: 50%;
+  background: var(--page);
+  color: var(--hv-to);
+  box-shadow: 0 2cqi 5cqi rgba(9, 30, 80, 0.25);
+}
+
+.hero-visual__main-icon {
+  width: 9cqi;
+  height: 9cqi;
+}
+
+/* 핵심 서비스 카드 3개 */
+.hero-visual__chips {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2cqi;
+  margin: 0;
+  padding: 0 6cqi 0 0;
+  list-style: none;
+}
+
+.hero-visual__chip {
+  display: flex;
+  align-items: center;
+  gap: 2cqi;
+  width: fit-content;
+  max-width: 100%;
+  margin-left: calc(var(--i) * 4cqi);
+  padding: 1.6cqi 3.2cqi 1.6cqi 1.6cqi;
+  border-radius: var(--radius-md);
+  background: var(--page);
+  box-shadow: 0 1.5cqi 4cqi rgba(9, 30, 80, 0.2);
+}
+
+.hero-visual__chip:nth-child(2) {
+  opacity: 0.96;
+}
+
+.hero-visual__chip-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 6.4cqi;
+  height: 6.4cqi;
+  border-radius: 1.6cqi;
+  background: var(--main2-card);
+  color: var(--hv-to);
+}
+
+.hero-visual__chip-icon svg {
+  width: 3.8cqi;
+  height: 3.8cqi;
+}
+
+.hero-visual__chip-text {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(11px, 2.6cqi, 16px);
+  font-weight: var(--text-weight-700);
+  line-height: 1.25;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.hero-visual__chip-text small {
+  font-family: var(--font-family-number);
+  font-size: clamp(9px, 1.7cqi, 11px);
+  font-weight: var(--text-weight-700);
+  letter-spacing: 0.06em;
+  color: var(--border);
+}

@@ -1,0 +1,288 @@
+/* ---- 히어로 안 연락처 ---- */
+.civil-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.civil-contact li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: var(--radius-full);
+  background: var(--page);
+  font-size: var(--text-size-14);
+  color: var(--text-meta);
+}
+
+.civil-contact strong {
+  color: var(--primary-hover);
+}
+
+/* ---- 민원 서비스 카드 ---- */
+.civil {
+  width: 1200px;
+  margin: var(--section-gap) 0 0 128px;
+}
+
+.civil__heading,
+.civil-process__title {
+  font-size: var(--fs-section);
+  font-weight: var(--text-weight-700);
+  color: var(--text-primary);
+  line-height: var(--lh-tight);
+}
+
+.civil__tabs {
+  margin-top: 24px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.civil__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.civil-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 260px;
+  padding: 32px 28px 28px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  background: var(--page);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.civil-card:hover {
+  border-color: var(--border);
+  box-shadow: 0 8px 24px rgba(9, 80, 160, 0.08);
+}
+
+.civil-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--main2-card);
+}
+
+.civil-card__title {
+  margin-top: 20px;
+  font-size: var(--fs-title);
+  font-weight: var(--text-weight-700);
+  color: var(--text-primary);
+  line-height: var(--lh-tight);
+}
+
+.civil-card__desc {
+  margin-top: 10px;
+  font-size: var(--text-size-15);
+  line-height: 1.55;
+  color: var(--text-meta);
+}
+
+.civil-card__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  min-width: 88px;
+  height: 40px;
+  margin-top: auto;
+  padding: 0 18px;
+  border-radius: var(--radius-sm);
+  background: var(--main2-card);
+  color: var(--primary-hover);
+  font-size: var(--text-size-14);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.civil-card__btn:hover {
+  background: var(--primary-hover);
+  color: var(--text-on-primary);
+}
+
+/* 상담 안내 카드 */
+.civil-card--help {
+  border-color: transparent;
+  background: var(--primary);
+  color: var(--text-on-primary);
+}
+
+.civil-card--help:hover {
+  border-color: transparent;
+}
+
+.civil-card__eyebrow {
+  font-size: var(--text-size-14);
+  opacity: 0.8;
+}
+
+.civil-card--help .civil-card__title {
+  margin-top: 12px;
+  color: inherit;
+}
+
+.civil-card--help .civil-card__desc {
+  color: inherit;
+  opacity: 0.85;
+}
+
+.civil-card__tel {
+  margin-top: auto;
+  font-family: var(--font-family-number);
+  font-size: 28px;
+  font-weight: var(--text-weight-700);
+}
+
+.civil-card__tel:hover {
+  text-decoration: underline;
+}
+
+/* ---- 처리 절차 (메인 "자주 찾는 서비스" 박스 톤) ---- */
+.civil-process {
+  width: 1200px;
+  margin: var(--section-gap) 0 0 128px;
+  padding: 40px 40px 44px;
+  border-radius: var(--radius-xl);
+  background: var(--card-menu-bg-1);
+}
+
+.civil-process__steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+}
+
+.civil-process__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 28px 24px;
+  border-radius: var(--radius-md);
+  background: var(--page);
+  font-size: var(--text-size-18);
+}
+
+.civil-process__step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -17px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--border);
+  border-right: 2px solid var(--border);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.civil-process__num {
+  font-family: var(--font-family-number);
+  font-size: var(--text-size-14);
+  font-weight: var(--text-weight-700);
+  color: var(--border);
+}
+
+.civil-process__desc {
+  font-size: var(--text-size-14);
+  color: var(--text-meta);
+}
+
+/* ---- 하단 보드 (메인 home__boards 와 같은 배치) ---- */
+.civil-boards {
+  display: flex;
+  gap: 40px; /* 580 + 40 + 580 = 1200 (본문 폭) */
+  margin: var(--section-gap) 0 0 128px;
+}
+
+@media (max-width: 1439px) {
+  .civil,
+  .civil-process {
+    width: auto;
+    margin: var(--section-gap) 24px 0;
+  }
+
+  .civil-process {
+    padding: 32px 24px;
+  }
+
+  .civil__grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+
+  .civil-card {
+    min-height: 230px;
+  }
+
+  .civil-boards {
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: var(--section-gap) 24px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .civil,
+  .civil-process {
+    margin: var(--section-gap) 16px 0;
+  }
+
+  .civil-process {
+    padding: 24px 16px;
+  }
+
+  .civil__tabs {
+    border-radius: var(--radius-md);
+  }
+
+  .civil__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .civil-card {
+    min-height: 0;
+    padding: 24px 20px 20px;
+  }
+
+  .civil-card__btn {
+    margin-top: 16px;
+  }
+
+  .civil-card__tel {
+    margin-top: 16px;
+  }
+
+  .civil-process__steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .civil-process__step {
+    padding: 20px 16px;
+    font-size: var(--text-size-16);
+  }
+
+  .civil-process__step::after {
+    display: none;
+  }
+
+  .civil-boards {
+    gap: 16px;
+    margin: var(--section-gap) 16px 0;
+  }
+}

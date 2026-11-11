@@ -1,0 +1,190 @@
+/* 헤더 — 메인바·사이드 메뉴와 같은 톤 (흰 바탕, 회색 아이콘 링크, 둥근 항목) */
+.header {
+  background: var(--page);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 1200px;
+  height: 104px;
+  margin-left: 128px;
+  padding-top: 8px;
+}
+
+.header__logo {
+  flex-shrink: 0;
+  margin-right: auto;
+  border-radius: var(--radius-sm);
+}
+
+.header__logo img {
+  width: auto;
+  height: 60px;
+  aspect-ratio: 469.5 / 90;
+  object-fit: contain;
+}
+
+.header__logo:focus-visible {
+  outline: 2px solid var(--border);
+  outline-offset: 4px;
+}
+
+/* ---- 검색 (둥근 필드) ---- */
+.header__search {
+  display: flex;
+  align-items: center;
+  width: 340px;
+  height: 48px;
+  padding: 0 6px 0 20px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  background: var(--gray-100);
+  transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.header__search:hover {
+  border-color: var(--gray-200);
+}
+
+.header__search:focus-within {
+  border-color: var(--border);
+  background: var(--page);
+  box-shadow: 0 0 0 4px rgba(56, 142, 255, 0.12);
+}
+
+.header__search input {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: var(--text-size-15);
+}
+
+.header__search input::placeholder {
+  color: var(--gray-400);
+}
+
+.header__search input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.header__search-btn {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--primary);
+  color: var(--text-on-primary);
+  transition: background-color 0.15s;
+}
+
+.header__search-btn:hover {
+  background: var(--primary-hover);
+}
+
+.header__search-btn:focus-visible {
+  outline: 2px solid var(--border);
+  outline-offset: 2px;
+}
+
+/* ---- 회원 메뉴 ---- */
+.header__util {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.header__util-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: var(--radius-md);
+  color: var(--gray-500);
+  font-size: var(--text-size-14);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.header__util-link:hover {
+  background: var(--main2-card);
+  color: var(--primary-hover);
+}
+
+.header__util-link:focus-visible {
+  outline: 2px solid var(--border);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1439px) {
+  .header__inner {
+    gap: 16px;
+    width: auto;
+    height: auto;
+    margin: 0 24px;
+    padding: 16px 0 0;
+  }
+
+  .header__logo img {
+    height: 48px;
+  }
+
+  .header__search {
+    flex: 0 1 300px;
+    width: auto;
+  }
+}
+
+@media (max-width: 1023px) {
+  .header__util-link {
+    padding: 0 10px;
+  }
+
+  .header__util-link span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .header__util-link svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header__inner {
+    flex-wrap: wrap;
+    row-gap: 12px;
+    column-gap: 4px;
+    margin: 0 16px;
+    padding-top: 12px;
+  }
+
+  .header__logo img {
+    height: 40px;
+  }
+
+  .header__search {
+    order: 3;
+    flex: 1 1 100%;
+    height: 44px;
+  }
+
+  .header__search-btn {
+    width: 32px;
+    height: 32px;
+  }
+}

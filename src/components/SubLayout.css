@@ -1,0 +1,25 @@
+.sub {
+  position: relative;
+  width: 1440px;
+  margin: 0 auto;
+  background: var(--page);
+}
+
+/* 본문이 짧아도 푸터가 사이드 메뉴(237~약 560px) 옆으로 올라오지 않도록 */
+.sub__main {
+  min-height: 640px;
+}
+
+.sub__footer {
+  padding-top: 0;
+}
+
+@media (max-width: 1439px) {
+  .sub {
+    width: 100%;
+  }
+
+  .sub__main {
+    min-height: 0;
+  }
+}

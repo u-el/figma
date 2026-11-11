@@ -1,0 +1,33 @@
+.home {
+  position: relative;
+  width: 1440px;
+  min-height: 1800px;
+  margin: 0 auto;
+  background: var(--page);
+}
+
+.home__boards {
+  display: flex;
+  gap: 40px; /* 580 + 40 + 580 = 1200 (본문 폭) */
+  margin: var(--section-gap) 0 0 128px;
+}
+
+@media (max-width: 1439px) {
+  .home {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .home__boards {
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: var(--section-gap) 24px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .home__boards {
+    gap: 16px;
+    margin: var(--section-gap) 16px 0;
+  }
+}

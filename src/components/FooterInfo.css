@@ -1,0 +1,109 @@
+/* 청사 안내 — 메인 카드(BoardCard)와 같은 테두리·라운드 */
+.footer-info {
+  width: 1200px;
+  margin: 64px 0 0 128px;
+}
+
+.footer-info__heading {
+  font-size: var(--fs-section);
+  font-weight: var(--text-weight-700);
+  color: var(--text-primary);
+  line-height: var(--lh-tight);
+}
+
+.footer-info__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.footer-info__office {
+  padding: 28px 28px 24px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  background: var(--page);
+}
+
+.footer-info__name {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--gray-200);
+  font-size: var(--fs-subtitle);
+  font-weight: var(--text-weight-700);
+  color: var(--text-primary);
+  line-height: var(--lh-tight);
+}
+
+.footer-info__org {
+  font-size: var(--text-size-13);
+  font-weight: 500;
+  color: var(--border);
+}
+
+.footer-info__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0 0;
+}
+
+.footer-info__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--text-size-14);
+  line-height: 1.5;
+  color: var(--text-meta);
+}
+
+.footer-info__row dt {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-top: -3px;
+  border-radius: var(--radius-sm);
+  background: var(--main2-card);
+  color: var(--primary-hover);
+}
+
+.footer-info__row dd {
+  margin: 0;
+  word-break: keep-all;
+}
+
+@media (max-width: 1439px) {
+  .footer-info {
+    width: auto;
+    margin: 48px 24px 0;
+  }
+
+  .footer-info__list {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-info {
+    margin: 40px 16px 0;
+  }
+
+  .footer-info__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .footer-info__office {
+    padding: 20px;
+  }
+
+  .footer-info__row {
+    font-size: var(--text-size-13);
+  }
+}

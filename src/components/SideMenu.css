@@ -1,0 +1,155 @@
+/* 우측 플로팅 퀵메뉴 (모든 화면 공통)
+   레일은 첫 카드 높이(237px)부터 페이지 끝까지 깔리고, 메뉴는 그 안에서 sticky로 따라 내려옵니다. */
+.side-menu-rail {
+  position: absolute;
+  top: 237px; /* 헤더(104) + 메인바(24+70) + 본문 첫 카드 여백(39) */
+  bottom: 0;
+  left: 1356px;
+  z-index: 50;
+  width: 68px;
+  pointer-events: none;
+}
+
+.side-menu {
+  position: sticky;
+  top: 24px;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 68px;
+}
+
+.side-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  background: var(--page);
+  box-shadow: 0 10px 30px rgba(9, 80, 160, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.side-menu__item,
+.side-menu__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: var(--gray-500);
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.side-menu__item {
+  width: 100%;
+  height: 60px;
+  border-radius: var(--radius-md);
+}
+
+.side-menu__label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.side-menu__item:hover {
+  background: var(--main2-card);
+  color: var(--primary-hover);
+}
+
+.side-menu__item.is-active {
+  background: var(--primary);
+  color: var(--text-on-primary);
+}
+
+.side-menu__item:focus-visible,
+.side-menu__top:focus-visible {
+  outline: 2px solid var(--border);
+  outline-offset: 2px;
+}
+
+.side-menu__top {
+  width: 52px;
+  height: 52px;
+  gap: 0;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-full);
+  background: var(--page);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.side-menu__top .side-menu__label {
+  margin-top: -3px;
+  font-family: var(--font-family-number);
+  font-size: 10px;
+  font-weight: var(--text-weight-700);
+}
+
+.side-menu__top:hover {
+  border-color: var(--border);
+  color: var(--primary-hover);
+}
+
+/* 유동/모바일: 화면 하단 고정 탭바 */
+@media (max-width: 1439px) {
+  .side-menu-rail {
+    display: contents;
+  }
+
+  .side-menu {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 100;
+    display: block;
+    width: 100%;
+  }
+
+  .side-menu__list {
+    flex-direction: row;
+    gap: 0;
+    height: 60px;
+    padding: 6px 12px calc(6px + env(safe-area-inset-bottom));
+    border: 0;
+    border-top: 1px solid var(--gray-200);
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.04);
+  }
+
+  .side-menu__list li {
+    flex: 1 0 0;
+  }
+
+  .side-menu__item {
+    height: 100%;
+    border-radius: var(--radius-md);
+  }
+
+  .side-menu__item.is-active {
+    background: transparent;
+    color: var(--primary);
+  }
+
+  .side-menu__item.is-active .side-menu__label {
+    font-weight: var(--text-weight-700);
+  }
+
+  .side-menu__top {
+    position: fixed;
+    right: 16px;
+    bottom: 76px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .side-menu__top .side-menu__label {
+    display: none;
+  }
+}

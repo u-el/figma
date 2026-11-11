@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  line-height: var(--lh-body);
+  color: var(--text-primary);
+  background: var(--page);
+  -webkit-font-smoothing: antialiased;
+  /* 한글은 단어 단위로 줄바꿈 ("실시합니 / 다" 방지) */
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ===== 반응형 기준 =====
+ * ~1439px : 유동 레이아웃 (데스크탑 1440 고정 좌표 해제, 사이드메뉴 → 하단 탭바)
+ * ~767px  : 모바일 (1단 배치)
+ */
+@media (max-width: 1439px) {
+  body {
+    padding-bottom: 60px; /* 하단 탭바 높이 */
+  }
+}

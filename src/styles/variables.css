@@ -1,0 +1,92 @@
+/*
+ * Figma 변수 → CSS 커스텀 프로퍼티
+ * 출처: 경기도교육청 클론 (node 420:2933)
+ * Figma 변수 이름의 "/"와 공백은 "-"로 바꿨습니다. (예: text/size/14 → --text-size-14)
+ */
+:root {
+  /* Color — semantic */
+  --primary: #2f77d5;
+  --primary-hover: #0031a1;
+  --border: #388eff;
+  --page: #ffffff;
+  --main2-card: #eaf6ff;
+  --card-menu-bg-1: #e1f1ff;
+
+  /* Color — text */
+  --text-primary: #222222;
+  --text-meta: #454545;
+  --text-on-primary: #ffffff;
+
+  /* Color — palette */
+  --color-blue-400: #e1f1ff;
+  --color-blue-900: #0950a0;
+
+  /* Typography — size */
+  --text-size-13: 13px;
+  --text-size-14: 14px;
+  --text-size-15: 15px;
+  --text-size-16: 16px;
+  --text-size-18: 18px;
+  --text-size-20: 20px;
+  --text-size-22: 22px;
+  --text-size-24: 24px;
+
+  /* Typography — weight */
+  --text-weight-400: 400;
+  --text-weight-700: 700;
+
+  /* Typography — style: Android/Caption */
+  --android-caption-font-family: 'Balsamiq Sans', var(--font-family-base);
+  --android-caption-font-size: 12px;
+  --android-caption-font-weight: 400;
+  --android-caption-line-height: 16px;
+  --android-caption-letter-spacing: 0;
+
+  /* ---- 아래는 Figma 변수가 아닌, 디자인에 직접 들어간 값 ---- */
+  --font-family-base: 'Pretendard', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --gray-100: #f5f5f5;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --font-family-number: 'Montserrat', var(--font-family-base);
+
+  /* Type scale — 제목·본문은 이 단계만 사용합니다 (모바일에서 아래 미디어쿼리로 한 단계씩 작아짐) */
+  --fs-hero: 30px; /* 배너 제목 */
+  --fs-section: 24px; /* 섹션 제목 (청사 안내, 민원 서비스 …) */
+  --fs-title: 20px; /* 카드 제목 */
+  --fs-subtitle: 18px; /* 목록형 카드의 항목 제목 (게시물, 청사 이름, 영상) */
+  --fs-body: 15px; /* 본문·링크 */
+  --fs-small: 14px; /* 보조 설명, 버튼 */
+  --fs-caption: 13px; /* 날짜, 라벨 */
+  --lh-tight: 1.35; /* 제목 줄 간격 */
+  --lh-body: 1.6; /* 본문 줄 간격 */
+
+  /* Spacing — 섹션 사이 간격 */
+  --section-gap: 48px;
+
+  /* Radius — 모든 카드·버튼은 이 단계만 사용합니다
+   * 안에 들어가는 요소 = 바깥 반경 - 안쪽 여백 (예: 메인바 20 - 8 = 항목 12) */
+  --radius-xl: 20px; /* 큰 섹션 박스·플로팅 바 (배너, 히어로, 퀵서비스, 메인바, 사이드바, 팝업) */
+  --radius-lg: 16px; /* 단독 카드 (게시판, 청사, 게시물, 서비스 카드), 탭 바 */
+  --radius-md: 12px; /* 박스 안의 카드, 메뉴 항목, 아이콘 타일 */
+  --radius-sm: 8px; /* 버튼, 입력창, 셀렉트, 칩 */
+  --radius-full: 999px; /* 알약형·원형 */
+}
+
+@media (max-width: 1439px) {
+  :root {
+    --fs-hero: 24px;
+    --section-gap: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --fs-hero: 22px;
+    --fs-section: 20px;
+    --fs-title: 18px;
+    --fs-subtitle: 16px;
+    --section-gap: 32px;
+  }
+}

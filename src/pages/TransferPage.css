@@ -1,0 +1,258 @@
+.transfer__back {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: var(--radius-full);
+  background: var(--page);
+  font-size: var(--text-size-14);
+  font-weight: 500;
+  color: var(--primary-hover);
+}
+
+.transfer__back:hover {
+  background: var(--primary-hover);
+  color: var(--text-on-primary);
+}
+
+.transfer__tabs {
+  width: 1200px;
+  margin: var(--section-gap) 0 0 128px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.transfer__heading {
+  font-size: var(--fs-section);
+  font-weight: var(--text-weight-700);
+  color: var(--text-primary);
+  line-height: var(--lh-tight);
+}
+
+/* ---- 전학 절차 (연파랑 박스 + 흰 카드) ---- */
+.transfer-steps {
+  width: 1200px;
+  margin: 24px 0 0 128px;
+  padding: 40px 40px 44px;
+  border-radius: var(--radius-xl);
+  background: var(--card-menu-bg-1);
+  scroll-margin-top: 24px;
+}
+
+.transfer-steps__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.transfer-steps__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 190px;
+  padding: 32px 28px;
+  border-radius: var(--radius-md);
+  background: var(--page);
+}
+
+.transfer-steps__item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -26px;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid var(--border);
+  border-right: 2px solid var(--border);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.transfer-steps__num {
+  font-family: var(--font-family-number);
+  font-size: var(--text-size-13);
+  font-weight: var(--text-weight-700);
+  letter-spacing: 0.06em;
+  color: var(--border);
+}
+
+.transfer-steps__title {
+  margin-top: 14px;
+  font-size: var(--fs-title);
+  color: var(--text-primary);
+  font-weight: var(--text-weight-700);
+  line-height: var(--lh-tight);
+}
+
+.transfer-steps__desc {
+  margin-top: 10px;
+  font-size: var(--text-size-15);
+  line-height: 1.55;
+  color: var(--text-meta);
+}
+
+/* ---- 서류 / 서식 (메인 BoardCard 두 칸 배치) ---- */
+.transfer-boards {
+  display: flex;
+  gap: 40px; /* 580 + 40 + 580 = 1200 (본문 폭) */
+  margin: var(--section-gap) 0 0 128px;
+}
+
+.transfer-card {
+  width: 580px;
+  padding: 38px 40px 28px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  background: var(--page);
+  scroll-margin-top: 24px;
+}
+
+.transfer-card__title {
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--gray-200);
+  font-size: var(--fs-title);
+  font-weight: var(--text-weight-700);
+  line-height: var(--lh-tight);
+}
+
+.transfer-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px dashed var(--gray-200);
+}
+
+.transfer-row:last-child {
+  border-bottom: 0;
+}
+
+.transfer-row__icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--main2-card);
+}
+
+.transfer-row__text {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  font-size: var(--text-size-16);
+  color: var(--text-primary);
+}
+
+.transfer-row__count {
+  font-weight: var(--text-weight-400);
+  color: var(--primary-hover);
+}
+
+.transfer-row__note {
+  font-size: var(--text-size-13);
+  color: var(--gray-500);
+}
+
+.transfer-row__btn {
+  flex-shrink: 0;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: var(--radius-sm);
+  background: var(--primary-hover);
+  color: var(--text-on-primary);
+  font-size: var(--text-size-14);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.transfer-row__btn:hover {
+  background: var(--primary);
+}
+
+.transfer-row__btn--ghost {
+  background: var(--main2-card);
+  color: var(--primary-hover);
+}
+
+.transfer-row__btn--ghost:hover {
+  background: var(--primary-hover);
+  color: var(--text-on-primary);
+}
+
+@media (max-width: 1439px) {
+  .transfer__tabs,
+  .transfer-steps {
+    width: auto;
+    margin: 32px 24px 0;
+  }
+
+  .transfer-steps {
+    margin-top: 24px;
+    padding: 32px 24px;
+  }
+
+  .transfer-steps__list {
+    gap: 32px;
+  }
+
+  .transfer-boards {
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: var(--section-gap) 24px 0;
+  }
+
+  .transfer-card {
+    flex: 1 1 360px;
+    width: auto;
+    padding: 32px 24px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .transfer__tabs {
+    margin: 20px 16px 0;
+    border-radius: var(--radius-md);
+  }
+
+  .transfer-steps {
+    margin: 16px 16px 0;
+    padding: 24px 16px;
+  }
+
+  .transfer-steps__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .transfer-steps__item {
+    min-height: 0;
+    padding: 24px 20px;
+  }
+
+  .transfer-steps__item:not(:last-child)::after {
+    top: auto;
+    right: 50%;
+    bottom: -19px;
+    transform: translateX(50%) rotate(135deg);
+  }
+
+  .transfer-boards {
+    gap: 16px;
+    margin: var(--section-gap) 16px 0;
+  }
+
+  .transfer-row {
+    flex-wrap: wrap;
+  }
+
+  .transfer-row__btn {
+    margin-left: auto;
+  }
+}

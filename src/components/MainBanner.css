@@ -1,0 +1,146 @@
+.banner {
+  position: relative;
+  width: 1200px;
+  height: 360px;
+  margin: 40px 0 0 128px;
+  border-radius: var(--radius-xl);
+  background: var(--main2-card);
+  overflow: hidden;
+}
+
+.banner__text {
+  position: absolute;
+  top: 48px;
+  left: 49px;
+}
+
+.banner__label {
+  font-size: var(--text-size-16);
+  color: var(--primary-hover);
+}
+
+.banner__title {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  font-size: var(--fs-hero);
+  font-weight: var(--text-weight-700);
+  color: var(--text-primary);
+  line-height: var(--lh-tight);
+}
+
+.banner__desc {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 0;
+  font-size: var(--text-size-16);
+  line-height: var(--lh-body);
+  color: var(--text-meta);
+  white-space: pre;
+}
+
+.banner__controls {
+  position: absolute;
+  top: 286px;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.banner__arrow {
+  width: 30px;
+  height: 30px;
+}
+
+.banner__arrow--next img {
+  transform: rotate(180deg);
+}
+
+.banner__counter {
+  width: 73px;
+  margin-right: -5px;
+  font-size: var(--text-size-18);
+  font-weight: 600;
+  color: var(--primary-hover);
+  white-space: nowrap;
+}
+
+.banner__image {
+  position: absolute;
+  top: 41px;
+  left: 563px;
+  width: 602px;
+  height: 260.606px;
+  max-width: none;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+@media (max-width: 1439px) {
+  .banner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    grid-template-areas:
+      'text image'
+      'controls image';
+    column-gap: 32px;
+    width: auto;
+    height: auto;
+    margin: 32px 24px 0;
+    padding: 32px;
+  }
+
+  .banner__text,
+  .banner__controls,
+  .banner__image {
+    position: static;
+  }
+
+  .banner__text {
+    grid-area: text;
+  }
+
+  .banner__controls {
+    grid-area: controls;
+    align-self: end;
+  }
+
+  .banner__image {
+    grid-area: image;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 602 / 260.606;
+    align-self: center;
+  }
+
+  .banner__desc {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 767px) {
+  .banner {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'image'
+      'text'
+      'controls';
+    row-gap: 20px;
+    margin: 20px 16px 0;
+    padding: 20px;
+  }
+
+  .banner__title {
+    margin-top: 12px;
+  }
+
+  .banner__desc {
+    margin-top: 12px;
+    font-size: var(--text-size-15);
+  }
+
+  .banner__controls {
+    gap: 24px;
+  }
+}

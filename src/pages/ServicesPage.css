@@ -1,0 +1,128 @@
+/* 메인 보드 카드(BoardCard)와 같은 테두리·라운드 스타일의 대상 카드 3개 */
+.services__targets {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: 1200px;
+  margin: var(--section-gap) 0 0 128px;
+}
+
+.target-card {
+  display: flex;
+  flex-direction: column;
+  padding: 36px 32px 32px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  background: var(--page);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.target-card:hover {
+  border-color: var(--border);
+  box-shadow: 0 8px 24px rgba(9, 80, 160, 0.08);
+}
+
+.target-card__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.target-card__badge {
+  font-family: var(--font-family-number);
+  font-size: 12px;
+  font-weight: var(--text-weight-700);
+  letter-spacing: 0.08em;
+  color: var(--border);
+}
+
+.target-card__title {
+  margin-top: 8px;
+  font-size: var(--fs-title);
+  font-weight: var(--text-weight-700);
+  color: var(--text-primary);
+  line-height: var(--lh-tight);
+}
+
+.target-card__desc {
+  margin-top: 16px;
+  font-size: var(--text-size-15);
+  color: var(--text-meta);
+}
+
+.target-card__list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.target-card__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 4px;
+  border-bottom: 1px dashed var(--gray-200);
+  font-size: var(--text-size-16);
+  color: var(--text-primary);
+}
+
+.target-card__link svg {
+  color: var(--gray-400);
+}
+
+.target-card__link:hover {
+  color: var(--primary);
+}
+
+.target-card__link:hover span {
+  text-decoration: underline;
+}
+
+.target-card__link:hover svg {
+  color: var(--primary);
+}
+
+.target-card__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  margin-top: 28px;
+  border-radius: var(--radius-sm);
+  background: var(--main2-card);
+  font-size: var(--text-size-15);
+  font-weight: 500;
+  color: var(--primary-hover);
+}
+
+.target-card__cta:hover {
+  background: var(--primary-hover);
+  color: var(--text-on-primary);
+}
+
+@media (max-width: 1439px) {
+  .services__targets {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    width: auto;
+    margin: var(--section-gap) 24px 0;
+  }
+
+  .target-card {
+    padding: 28px 24px 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .services__targets {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin: var(--section-gap) 16px 0;
+  }
+
+  .target-card__link {
+    padding: 12px 2px;
+    font-size: var(--text-size-15);
+  }
+}

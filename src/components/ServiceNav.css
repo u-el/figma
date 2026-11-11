@@ -1,0 +1,58 @@
+/* 대상 선택 하위 메뉴 — 주 메뉴바와 어울리는 세그먼트 탭 */
+.service-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  width: 1200px;
+  margin: 16px 0 0 128px;
+  padding: 4px;
+  border-radius: var(--radius-lg);
+  background: var(--gray-100);
+}
+
+.service-nav__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  border-radius: var(--radius-md);
+  color: var(--gray-500);
+  font-size: var(--text-size-15);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.service-nav__item:hover {
+  color: var(--primary-hover);
+}
+
+.service-nav__item.is-active {
+  background: var(--page);
+  color: var(--primary-hover);
+  font-weight: var(--text-weight-700);
+  box-shadow: 0 2px 8px rgba(9, 80, 160, 0.1);
+}
+
+.service-nav__item:focus-visible {
+  outline: 2px solid var(--border);
+  outline-offset: -2px;
+}
+
+@media (max-width: 1439px) {
+  .service-nav {
+    width: auto;
+    margin: 12px 24px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .service-nav {
+    margin: 12px 16px 0;
+  }
+
+  .service-nav__item {
+    height: 40px;
+    font-size: var(--text-size-13);
+  }
+}

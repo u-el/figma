@@ -1,0 +1,99 @@
+/* 게시판 카드 — 다른 카드(서비스·민원)와 같은 안쪽 여백·제목·구분선 */
+.board-card {
+  display: flex;
+  flex-direction: column;
+  width: 580px;
+  min-height: 300px;
+  padding: 32px 32px 20px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  background: var(--page);
+}
+
+.board-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.board-card__title {
+  font-size: var(--fs-title);
+  font-weight: var(--text-weight-700);
+  line-height: var(--lh-tight);
+  color: var(--text-primary);
+}
+
+.board-card__more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin: -8px -8px -8px 0;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s;
+}
+
+.board-card__more:hover {
+  background: var(--main2-card);
+}
+
+.board-card__list {
+  margin-top: 4px;
+}
+
+.board-card__item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 2px;
+  border-bottom: 1px dashed var(--gray-200);
+}
+
+.board-card__list li:last-child .board-card__item {
+  border-bottom: 0;
+}
+
+.board-card__item-title {
+  min-width: 0;
+  overflow: hidden;
+  font-size: var(--fs-body);
+  color: var(--text-primary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.board-card__item:hover .board-card__item-title {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.board-card__date {
+  flex-shrink: 0;
+  font-size: var(--fs-caption);
+  color: var(--gray-500);
+}
+
+@media (max-width: 1439px) {
+  .board-card {
+    flex: 1 1 360px;
+    width: auto;
+    min-height: 0;
+    padding: 28px 24px 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .board-card__item {
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 0;
+  }
+
+  .board-card__item-title {
+    white-space: normal;
+  }
+}

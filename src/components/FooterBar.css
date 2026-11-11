@@ -1,0 +1,144 @@
+/* 최하단 바 — 진한 파랑 대신 연회색 바탕 + 회색 링크 (메인바·헤더 톤) */
+.footer-bar {
+  margin-top: 64px;
+  border-top: 1px solid var(--gray-200);
+  background: var(--gray-100);
+}
+
+.footer-bar__inner {
+  width: 1200px;
+  margin-left: 128px;
+  padding: 32px 0 36px;
+}
+
+.footer-bar__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.footer-bar__logo {
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+}
+
+.footer-bar__logo img {
+  width: auto;
+  height: 40px;
+  aspect-ratio: 469.5 / 90;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.footer-bar__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.footer-bar__links a {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: var(--radius-md);
+  font-size: var(--text-size-14);
+  font-weight: 500;
+  color: var(--gray-500);
+  white-space: nowrap;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.footer-bar__links a:hover {
+  background: var(--page);
+  color: var(--primary-hover);
+}
+
+.footer-bar__links a.is-strong {
+  color: var(--primary-hover);
+  font-weight: var(--text-weight-700);
+}
+
+.footer-bar__links a:focus-visible,
+.footer-bar__logo:focus-visible {
+  outline: 2px solid var(--border);
+  outline-offset: 2px;
+}
+
+.footer-bar__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 20px;
+  font-size: var(--text-size-13);
+  color: var(--gray-500);
+}
+
+.footer-bar__contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-bar__contact strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 1439px) {
+  .footer-bar {
+    margin-top: 48px;
+  }
+
+  .footer-bar__inner {
+    width: auto;
+    margin: 0 24px;
+    padding: 28px 0 32px;
+  }
+
+  .footer-bar__top {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-bar {
+    margin-top: 40px;
+  }
+
+  .footer-bar__inner {
+    margin: 0 16px;
+    padding: 24px 0 28px;
+  }
+
+  .footer-bar__top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 16px;
+  }
+
+  .footer-bar__logo img {
+    height: 32px;
+  }
+
+  .footer-bar__links {
+    margin-left: -12px;
+  }
+
+  .footer-bar__links a {
+    height: 32px;
+    font-size: var(--text-size-13);
+  }
+
+  .footer-bar__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 16px;
+    font-size: 12px;
+  }
+}

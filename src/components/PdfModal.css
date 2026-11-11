@@ -1,0 +1,59 @@
+.pdf-modal {
+  position: fixed;
+  width: 360px;
+  margin: auto;
+  padding: 28px 28px 24px;
+  border: 0;
+  border-radius: var(--radius-xl);
+  background: #fff;
+  color: var(--text-primary);
+  box-shadow: 0 20px 50px rgba(9, 80, 160, 0.18);
+}
+
+.pdf-modal::backdrop {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+.pdf-modal__title {
+  font-size: var(--text-size-18);
+  font-weight: var(--text-weight-700);
+}
+
+.pdf-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 36px;
+}
+
+.pdf-modal__btn {
+  min-width: 82px;
+  height: 42px;
+  padding: 0 16px;
+  border-radius: var(--radius-sm);
+  background: var(--main2-card);
+  color: var(--primary-hover);
+  font-size: var(--text-size-14);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.pdf-modal__btn:hover {
+  background: var(--card-menu-bg-1);
+}
+
+.pdf-modal__btn--primary {
+  background: var(--primary-hover);
+  color: var(--text-on-primary);
+}
+
+.pdf-modal__btn--primary:hover {
+  background: var(--primary);
+}
+
+@media (max-width: 767px) {
+  .pdf-modal {
+    width: calc(100% - 32px);
+    max-width: 360px;
+  }
+}

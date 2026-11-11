@@ -1,0 +1,122 @@
+/* 연파랑 박스 + 흰 아이콘 카드 — 아이콘은 민원 카드와 같은 연파랑 타일 */
+.quick {
+  width: 1200px;
+  margin: var(--section-gap) 0 0 128px;
+  padding: 36px 40px 40px;
+  border-radius: var(--radius-xl);
+  background: var(--card-menu-bg-1);
+}
+
+.quick__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.quick__title {
+  font-size: var(--fs-section);
+  font-weight: var(--text-weight-700);
+  line-height: var(--lh-tight);
+  color: var(--text-primary);
+}
+
+.quick__all {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--primary-hover);
+  white-space: nowrap;
+}
+
+.quick__all img {
+  width: 20px;
+  height: 20px;
+  transform: rotate(180deg);
+}
+
+.quick__all:hover {
+  text-decoration: underline;
+}
+
+.quick__list {
+  display: grid;
+  grid-template-columns: repeat(var(--quick-cols, 4), minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.quick__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  height: 148px;
+  padding: 0 12px;
+  border-radius: var(--radius-md);
+  background: var(--page);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  transition: box-shadow 0.15s, color 0.15s;
+}
+
+.quick__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--main2-card);
+}
+
+.quick__card:hover {
+  color: var(--primary-hover);
+  box-shadow: 0 0 0 2px var(--border);
+}
+
+@media (max-width: 1439px) {
+  .quick {
+    width: auto;
+    margin: var(--section-gap) 24px 0;
+    padding: 32px 24px;
+  }
+
+  .quick__list {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+  }
+
+  .quick__card {
+    height: 136px;
+  }
+}
+
+@media (max-width: 767px) {
+  .quick {
+    margin: var(--section-gap) 16px 0;
+    padding: 24px 16px;
+  }
+
+  .quick__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .quick__card {
+    gap: 12px;
+    height: 120px;
+    font-size: var(--fs-small);
+  }
+
+  .quick__icon {
+    width: 48px;
+    height: 48px;
+  }
+}
