@@ -1,16 +1,58 @@
-# React + Vite
+# [경기도교육청 대표 포털 UX/UI 개선 프로젝트]
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> [경기도교육청 대표 포털의 복잡한 메뉴 구조를 사용자 중심으로 재설계하여, 학생·학부모·교직원이 민원 및 교육비 지원 서비스에 더 쉽고 빠르게 접근할 수 있도록 개선한 반응형 웹 리뉴얼]
 
-Currently, two official plugins are available:
+## 1. 링크
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Live Demo**: https://u-el.github.io/figma/
+- **GitHub**: https://github.com/u-el/figma
+- **Figma 디자인**: https://www.figma.com/design/MnKOYQwzeCN6G9Gzm3xP95/경기도교육청-클론?node-id=477-382&t=ZMxwcBAuV8A132la-1
 
-## React Compiler
+## 2. 프로젝트 정보
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **제작 기간**: 2026.11.06 ~ 2026.11.10 (5일)
+- **담당 역할**: 개인 프로젝트 (기여도 100%)
+- **담당 범위**: 초기 Figma 디자인 → Claude 기반 UI 디자인 개선 및 React 구현 → 최종 Figma 디자인 재작업 → GitHub Pages 배포
 
-## Expanding the Oxlint configuration
+## 3. 사용 기술
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- **React, Vite**: 컴포넌트 기반의 웹 화면 구현, 개발 환경 구성 및 로컬 서버 실행
+- **GitHub Pages**: 무료 배포
+- **Figma**: 초기 UX/UI 디자인 최종 구현 결과물 기반 디자인 재작업
+- **Claude**: 바이브코딩을 활용한 웹사이트 디자인, 화면 구현 및 반복 수정
+
+## 4. 주요 기능
+
+**① 상단 내비게이션(GNB) 및 페이지 이동**
+
+-상단 메뉴 클릭 시 하위 메뉴가 펼쳐지는 인터랙션 구현
+-메뉴 선택 시 해당 페이지로 이동하는 기능 구현
+-사용자가 원하는 서비스를 쉽게 탐색할 수 있도록 내비게이션 구성
+
+**② 반응형 웹 레이아웃**
+
+-PC와 모바일 환경에 대응하는 반응형 레이아웃 구현
+-화면 크기에 따라 콘텐츠와 메뉴 배치가 자동으로 조정되도록 구성
+-다양한 화면 크기에서도 주요 콘텐츠를 확인할 수 있도록 설계
+
+**③ 민원 및 교육비 지원 서비스 접근**
+-상단 메뉴를 통해 관련 신청 페이지로 이동할 수 있도록 구성
+-실제 신청서 입력 및 제출 기능은 구현 범위에서 제외
+
+## 5. 트러블슈팅
+
+### 이슈 1: [문제를 한 줄로]
+
+- **문제**: [초기 Figma 시안은 디자인 요소가 충분히 구체화되지 않은 상태였으며, Claude를 활용해 웹사이트를 제작하는 과정에서 실제 구현 화면과 초기 시안 사이에 큰 차이가 발생함.]
+- **원인**: [초기 디자인의 세부 구성과 시각적 요소가 충분히 정의되지 않았고, 개발 과정에서 디자인 자체를 변경하고 발전시켰기 때문임.]
+- **해결**: [Claude에게 원하는 디자인 방향과 수정 사항을 반복적으로 전달하여 웹사이트를 개선하고, 최종 구현 결과물을 기준으로 Fima 디자인을 다시 제작함.]
+
+## 6. AI 활용 방식
+
+- **맡긴 일**: [웹사이트 초기 디자인 구현, React 컴포넌트 작성, UI 수정 및 기능 구현]
+- **핵심 프롬프트**: "[또 수정해야할 것이 있을까 좀 더 깔끔하고 통일성 있고 가독성 높게 만들고 싶어, 사이드바가 스크롤을 내려서 화면 밑으로 내려가도 보일 수 있도록 해줘]"
+
+## 7. 회고
+
+- **배운 점**: [AI가 생성한 결과물을 그대로 사용하는 것보다 원하는 디자인 방향을 구체적으로 설명하고 반복적으로 피드백하는 과정이 중요하다는 것을 배웠다. Claude를 활용하여 바이브코딩, React-Vite 기반 웹사이트 구현, GitHub Pages배포까지 전체 제작 과정을 경험했다.]
+- **아쉬운 점**: [초기 Figma 디자인을 너무 간단하게 만들어 화면 구성과 세부 디자인 요소를 충분히 구체화 하지 못했다. 그 결과 Claude로 웹사이트를 구현하는 과정에 있어 디자인 방향을 계속 수정하였고 최종 결과물을 기준으로 Figma 디자인을 다시 제작했다. ]
