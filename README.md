@@ -6,7 +6,7 @@
 
 - **Live Demo**: https://u-el.github.io/figma/
 - **GitHub**: https://github.com/u-el/figma
-- **Figma 디자인**: https://www.figma.com/design/MnKOYQwzeCN6G9Gzm3xP95/경기도교육청-클론?node-id=477-382&t=ZMxwcBAuV8A132la-1
+- **Figma 디자인**: https://www.figma.com/design/MnKOYQwzeCN6G9Gzm3xP95/%EA%B2%BD%EA%B8%B0%EB%8F%84%EA%B5%90%EC%9C%A1%EC%B2%AD-%ED%81%B4%EB%A1%A0?node-id=417-1962&t=ZMxwcBAuV8A132la-1
 
 ## 2. 프로젝트 정보
 
